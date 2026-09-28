@@ -1,0 +1,15 @@
+target/
+node_modules/
+dist/
+venv/
+.venv/
+__pycache__/
+*.py[cod]
+*.joblib
+.env
+application.properties
+*.log
+.idea/
+.vscode/
+*.iml
+Thumbs.db
