@@ -42,9 +42,9 @@ Change `MYSQL_PASSWORD` and `MYSQL_ROOT_PASSWORD` to local values. Then build an
 docker compose up --build -d
 ```
 
-Open <http://localhost:5173>. The first build downloads base images and dependencies, so it can take a few minutes. Compose waits for MySQL and the Python prediction service before starting the backend. The browser uses the frontend container as a same-origin proxy to the backend, and the backend calls the Python model over the private Compose network. MySQL data is retained in a named volume across restarts.
+Open <http://localhost:8088>. The first build downloads base images and dependencies, so it can take a few minutes. Compose waits for MySQL and the Python prediction service before starting the backend. The browser uses the frontend container as a same-origin proxy to the backend, and the backend calls the Python model over the private Compose network. MySQL data is retained in a named volume across restarts.
 
-To stop the app while preserving data, run `docker compose down`. To see service startup details, run `docker compose logs -f`. To access it from another device on the same network, open `http://<computer-running-Docker-LAN-IP>:5173` and allow inbound TCP port 5173 through that computer's firewall. This is intended for local assessment and LAN use, not public internet exposure.
+To stop the app while preserving data, run `docker compose down`. To see service startup details, run `docker compose logs -f`. To access it from another device on the same network, open `http://<computer-running-Docker-LAN-IP>:8088` and allow inbound TCP port 8088 through that computer's firewall. This is intended for local assessment and LAN use, not public internet exposure.
 
 Do not commit `.env`; it contains local credentials and is ignored by Git. On another computer, clone the repository, copy `.env.example` to `.env`, choose its own passwords, then run the same Compose command.
 
